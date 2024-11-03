@@ -1,10 +1,7 @@
 package com.fouadev.bankaccountservice.entities;
 
 import com.fouadev.bankaccountservice.enums.AccountType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,5 +21,7 @@ public class BankAccount {
     @Enumerated(EnumType.STRING)
     private AccountType type;
     private Date createdAt;
+    @ManyToOne
+    private Customer customer;
 
 }
